@@ -32,12 +32,13 @@ fun FormulirView(
     onSumbitClicked: (MutableList<String>) -> Unit
 ){
     var nama by remember { mutableStateOf("") }
+    var nim by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var notelepon by remember { mutableStateOf("")}
     var gender by remember { mutableStateOf("") }
 
-    val listData: MutableList<String> = mutableListOf(nama, gender, alamat)
+    val listData: MutableList<String> = mutableListOf(nama, nim, gender, alamat)
 
     Column (modifier = Modifier
         .fillMaxSize()
@@ -53,6 +54,16 @@ fun FormulirView(
             modifier = modifier
                 .fillMaxWidth()
                 .padding(5.dp)
+        )
+        TextField(
+            value = nim,
+            onValueChange = {nim = it},
+            label = { Text(text = "NIM") },
+            placeholder = { Text(text = "Isi NIM Anda") },
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
 
         Row (modifier = Modifier.fillMaxWidth()){

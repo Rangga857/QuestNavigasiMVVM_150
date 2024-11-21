@@ -23,6 +23,7 @@ fun TampilDataView(
         .padding(16.dp))
     {
         TampilData(x = "Nama", y = uiState.nama )
+        TampilData(x = "NIM", y = uiState.nim)
         TampilData(x = "Jenis Kelamin", y = uiState.gender)
         TampilData(x = "Alamat", y = uiState.alamat)
         Button(onClick = onBackButton) {
